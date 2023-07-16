@@ -3,15 +3,21 @@ import Card from "./components/Card"
 import data from './data/data'
 
 export default function App(){
-  console.log(data)
+  const cards = data.map(item => {
+    return (
+      <Card 
+        key={item.id}
+        {...item}
+      />
+    )
+  })
 
   return(
     <>
       <Header/>
       <section className="cards wrapper">
-        <Card/>
-        <Card/>
-        <Card/>
+        {cards}
+
       </section>
 
     </>

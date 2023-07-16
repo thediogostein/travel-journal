@@ -1,19 +1,26 @@
 import '../css/main.css'
+import LocationIcon from '../img/location-icon.svg'
 
-export default function Card(){
+export default function Card(props){
+  
+  
   return (
     <>
       <article className='card'>
-        <img className='card--img' src="https://source.unsplash.com/WLxQvbMyfas" alt="" />
+        <img className='card--img' src={props.imageUrl} alt="" />
         
         <section className='card--content'>
           <div className='card--location'>
-            <p className='card--country'>JAPAN</p>
-            <a href="">View on Google Maps</a>
+            <div className='card--location_location'>
+              <img src={LocationIcon} alt="" className='card--location_icon'/>
+              <p className='card--country'>{props.location}</p>
+            </div>
+            
+            <a href={props.googleMapsUrl} target='_blank' rel='noreferrer'>View on Google Maps</a>
           </div>
-          <h1>Mount Fuji</h1>
-          <p className='card--date'><span>12 Jan, 2021</span>-<span>24 Jan, 2021</span></p>
-          <p>Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.</p>
+          <h1>{props.title}</h1>
+          <p className='card--date'><span>{props.startDate}</span>-<span>{props.endDate}</span></p>
+          <p>{props.description}</p>
         </section>
       </article>
     </>
