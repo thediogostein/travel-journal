@@ -17,7 +17,6 @@ export default function App(){
       <Header/>
       <section className="cards wrapper">
         {cards}
-
       </section>
 
     </>
